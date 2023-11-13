@@ -1,0 +1,36 @@
+<%= form_for @job, url: save_job_path do |f| %>
+  <%= f.label :Title %>
+  <%= f.text_field :Title , required: true%>
+
+  <%= f.label :Description %>
+  <%= f.text_area :Description , required: true%>
+
+  <%= f.label :Responsibility %>
+  <%= f.text_area :Responsibility %>
+
+  <%= f.label :Requirements %>
+  <%= f.text_area :Requirements %>
+
+  <%= f.label :Deadline %>
+  <%= f.date_field :Deadline , required: true%>
+s
+  <%= f.label :Location %>
+  <%= f.text_field :Location , required: true%>
+
+  <%= f.label :Salary %>
+  <%= f.number_field :salary, step: 0.01 , required: true%>
+
+  <%= f.label :work_days %>
+  <%= f.number_field :work_days %>
+
+  <%= f.label :work_hours %>
+  <%= f.text_field :work_hours %>
+
+  <%= f.label :job_type %>
+  <%= f.text_field :job_type %>
+
+  <%= f.label :category %>
+  <%= f.text_field :category %>
+
+  <%= f.submit 'Add Job' %>
+<% end %>

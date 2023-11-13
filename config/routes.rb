@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   get "/", to: "recruiter#home"
   delete '/jobs/:job_id/delete', to: 'jobs#delete_job', as: :delete_job
   get '/jobs/:job_id/job_application', to: 'jobs#job_application', as: :job_application
+  get 'add_job', to: 'jobs#add_job', as: :add_job
+  # get 'save_job', to: 'jobs#save_job', as: :save_jobs
+  post '/jobs/save_job', to: 'jobs#save_job', as: :save_job
   # Defines the root path route ("/")
   # root "posts#index"
 end

@@ -13,5 +13,8 @@
         <%= render partial: 'recruiters_job_card', locals: { job: job, applications_count: job.applications.size } %>
       <% end %>
     </div>
+    <div>
+      <%= button_to 'Add Job', add_job_path, method: :get, class: 'rec-job-card-button blue'  %>
+    </div>
   </div>
 </div>
