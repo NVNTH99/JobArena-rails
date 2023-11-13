@@ -6,7 +6,7 @@ class JobsController < ApplicationController
     def save_job
         puts params.inspect
         @job = Job.new(job_params)
-
+        @job.job_id = Job.last.id + 1
         if @job.save
             redirect_to recruiter_home_path, notice: 'Job added successfully'
         else
@@ -20,6 +20,19 @@ class JobsController < ApplicationController
     end
 
     def edit_job
+        @job = Job.find_by(job_id: params[:job_id])
+        @job.inspect
+    end
+    
+    def update_job
+        @job = Job.find_by(job_id: params[:job_id])
+
+        if @job.update(job_params)
+            redirect_to recruiter_home_path, notice: 'Job updated successfully'
+        else
+            puts @job.errors.full_messages
+            render :edit_job
+        end
     end
 
     def delete_job

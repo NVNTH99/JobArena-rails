@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   get 'add_job', to: 'jobs#add_job', as: :add_job
   # get 'save_job', to: 'jobs#save_job', as: :save_jobs
   post '/jobs/save_job', to: 'jobs#save_job', as: :save_job
+  get '/jobs/:job_id/edit', to: 'jobs#edit_job', as: :edit_job
+  patch '/jobs/:job_id/update', to: 'jobs#update_job', as: :update_job
   # Defines the root path route ("/")
   # root "posts#index"
 end
