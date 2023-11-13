@@ -1,0 +1,17 @@
+<div class="job-app">
+    <div class="box">
+        <div class="left">
+            <div class="margin">
+                <h3 class="job_application heading_size">{job.title}</h3>
+                <h3 class="job_application heading_size">{job.companyName + ", " + job.location}</h3>
+                <h3 class="job_application heading_size">{job.category}</h3>
+                <br/>
+                <p class="job_application desc">{job.description}</p>
+                
+            </div>
+            <hr/>
+            <h2 class="job_application heading2">{length} Application(s) recieved</h2>
+            {candidateList.Pending && candidateList.Rejected && candidateList.Shortlisted && candidateList.Offered && <TabGroup candidateList={candidateList} fetchCand={fetchCand} user_id={user_id} />} {/*In case of error check here*/}
+        </div>
+    </div>
+</div>

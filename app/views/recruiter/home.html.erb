@@ -1,0 +1,17 @@
+<div class="recruiter-home-body">
+  <div>
+    <div>
+      <h1>Your Jobs</h1>
+    </div>
+    <div>
+    </div>
+  </div>
+  <hr>
+  <div class="recruiter-home-bottom">
+    <div class="recruiter-jobs-container">
+      <% @jobs.each do |job| %>
+        <%= render partial: 'recruiters_job_card', locals: { job: job, applications_count: job.applications.size } %>
+      <% end %>
+    </div>
+  </div>
+</div>
